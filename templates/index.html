@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLR House Price Prediction</title>
+</head>
+<body>
+    <h2>Enter House Details to Predict Price</h2>
+    <form action="/predict" method="post">
+        <label>Area (sq ft):</label>
+        <input type="number" name="area" required>
+        <br><br>
+
+        <label>Bedrooms:</label>
+        <input type="number" name="bedrooms" required>
+        <br><br>
+
+        <label>Age (years):</label>
+        <input type="number" name="age" required>
+        <br><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+        <h3>{{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
